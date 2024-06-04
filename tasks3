@@ -1,0 +1,266 @@
+import java.util.Scanner;
+
+public class Armstrong {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Bir başlangıç değeri giriniz: ");
+        int firstNumber = scanner.nextInt();
+        System.out.println("Bir bitiş değeri giriniz: ");
+        int secondNumber = scanner.nextInt();
+
+        for(int i = firstNumber; i <= secondNumber; i++) {
+            int sum= 0;
+            int temp = i;
+            int numDigits = String.valueOf(i).length();
+            while(temp != 0) {
+                int digit = temp % 10;
+                sum += Math.pow(digit, numDigits);
+                temp /= 10;}
+            if (sum == i) {
+                System.out.println(i+ " ");}
+        }
+    }
+}
+
+public class Asal {
+    public static void main(String[] args) {
+        int sayi = 41;
+        boolean asal = true;
+        if (sayi<= 2){
+            asal = false;
+        }else {
+            for (int i=2; i <= Math.sqrt(sayi); i ++){
+                if (sayi % i == 0){
+                    asal = false;
+                    break;}}}
+        if (asal) {System.out.println("Sayı asal sayıdır.");
+        } else {
+                System.out.println("Sayı asal sayı değildir.");}
+
+    }
+}
+import java.util.Scanner;
+
+public class AsalCarpanlar {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Sayı giriniz:: ");
+        int sayi = scanner.nextInt();
+        int carpan = 2;
+        int sefer = 0;
+        while (sayi > 1) {
+            if (sayi % carpan == 0) {
+                sefer ++;
+                System.out.println(carpan+ "");
+                sayi /= carpan;
+            } else {
+                carpan ++;
+                if (sefer > 0) {
+                    System.out.println("Çarpandaki adeti: "+ sefer);
+                    sefer = 0;
+                }
+            }
+
+        }scanner.close();
+        if (sefer > 0) {
+            System.out.println("Çarpandaki adeti: "+sefer);
+        }
+    }
+}
+import java.util.Scanner;
+
+public class Basamak {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Bir rakam giriniz: ");
+        int n = scanner.nextInt();
+        int toplam = 0;
+        while (n != 0) {
+            toplam += n % 10;
+            n /= 10;
+        } scanner.close();
+        System.out.println("Basamaklar toplamı : "+ toplam);
+    }
+}
+import java.util.Scanner;
+
+public class BasamakFor {
+    public static void main(String[] args) {
+        Scanner scanner= new Scanner(System.in);
+        System.out.println("Bir sayı giriniz: ");
+        int n = scanner.nextInt();
+        int toplam = 0;
+        for (int i = n; i !=0; i /= 10) {
+            toplam += i % 10;
+
+        }System.out.println(toplam);
+        scanner.close();
+    }
+}
+public class DoWhile {
+    public static void main(String[] args) {
+        int number = 1;
+        do {
+            number ++;
+            System.out.println("Hello World");
+        } while (number <= 5);
+    }
+}
+public class Faktöriyel {
+    public static void main(String[] args) {
+        int sayi= 5;
+        int faktoriel = 1;
+        for (int i = 1; i <= sayi; i ++){
+        faktoriel *= i;}
+        System.out.println(sayi+ "'in faktöriyeli "+faktoriel+"'dir.");
+
+    }
+}
+import java.util.Scanner;
+
+public class Fibonacci {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Bir sayı giriniz : ");
+        int sayi = scanner.nextInt();
+        int first_num = 0;
+        int second_num = 1;
+        int sum;
+        while (true){
+            sum = first_num + second_num;
+            if (sum > sayi) {
+                break;}
+            System.out.print(sum+" ");
+            first_num = second_num;
+            second_num = sum;
+        }scanner.close();
+    }
+}
+public class Hundred {
+    public static void main(String[] args) {
+        for (int i = 1; i <= 100; i++) {
+            System.out.println(i);
+
+        }
+    }
+}
+public class Hundred2 {
+    public static void main(String[] args) {
+        int number = 1;
+        while (number <= 100) {
+            System.out.println(number);
+            number ++;
+        }
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        int sayi = 1;
+        while (sayi <= 10) {
+            System.out.println(sayi);
+            System.out.println("Happy birthday!");
+            sayi ++;
+
+        }
+    }
+}
+
+import java.util.Scanner;
+
+public class Palindrom {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Bir başlangıç değeri giriniz: ");
+        int firstNumber = scanner.nextInt();
+        System.out.println("Bir bitiş değeri giriniz: ");
+        int secondNumber = scanner.nextInt();
+        int total = 0;
+        for (int i = firstNumber; i <= secondNumber; i++) {
+            String number = Integer.toString(i)
+            int a = 0;
+            int b = number.length() - 1;
+            while (a < b) {
+                if (number.charAt(a) == number.charAt(b)) {
+                    System.out.println(i);
+                    total += i;
+                }
+                a++;
+                b--;
+            }
+        }System.out.println(total);
+
+    }
+}
+
+
+import java.util.Scanner;
+
+public class PalindromWord {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Bir kelime giriniz: ");
+        String word = scanner.nextLine();
+        int i= 0;
+        int j= word.length()-1;
+        boolean isPalindrom = true;
+        while (i < j) {
+            if (word.charAt(i) != word.charAt(j)) {
+                isPalindrom = false;}
+            i ++;
+            j --;
+        }
+        if (isPalindrom) {
+            System.out.println(word+ " palindrom bir kelimedir.");
+        } else {
+            System.out.println(word+" palindrom bir kelime değildir");
+        } scanner.close();
+    }
+}
+import java.util.Scanner;
+
+public class StringDuplicate {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Bir kelime girin: ");
+        String str = scanner.nextLine();
+        for (int i = 0; i < str.length(); i++) {
+            for (int j = i + 1; j < str.length(); j++) {
+                if (str.charAt(i) == str.charAt(j)) {
+                    System.out.print(str.charAt(i) + " ");
+                    break;}
+
+            }
+        }scanner.close();
+    }
+}
+import java.util.Scanner;
+
+public class Toplamam {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int toplam = 0;
+        int n;
+        do {
+            System.out.println("Bir sayı giriniz");
+            n = scanner.nextInt();
+            toplam += n;
+        } while (n != 0);
+        System.out.println(toplam);
+        scanner.close();
+    }
+}
+import java.util.Scanner;
+
+public class Unique {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Bir kelime giriniz: ");
+        String word = scanner.nextLine();
+        for(int i = 0; i < word.length(); i++){
+            char c = word.charAt(i);
+            if (word.indexOf(c) == word.lastIndexOf(c)){
+                System.out.print( c + " ");
+            }
+        }scanner.close();
+    }
+}
